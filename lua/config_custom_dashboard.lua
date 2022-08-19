@@ -2,6 +2,12 @@ local db = require("dashboard")
 
 db.preview_file_Path = vim.fn.getcwd()
 
+-- Show status line and tab line in graphics mode.
+if vim.fn.has("ttyout") == 0 then
+	db.hide_statusline = false
+	db.hide_tabline = false
+end
+
 db.custom_header = {
 [[                                   ]],
 [[          ▀████▀▄▄              ▄█ ]],
