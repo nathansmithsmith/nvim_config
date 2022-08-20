@@ -50,4 +50,8 @@ Plug "nvim-telescope/telescope.nvim"
 -- Other.
 Plug "bfrg/vim-cpp-modern"
 
+-- Session
+Plug "xolox/vim-session"
+Plug "xolox/vim-misc"
+
 vim.call('plug#end')
