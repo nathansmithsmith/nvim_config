@@ -52,3 +52,6 @@ vim.g["airline#extensions#tabline#show_buffers"] = 1
 
 -- Fonts.
 vim.opt.guifont = "Hack:h12"
+
+-- Vim session.
+vim.g.session_autoload = "no"
