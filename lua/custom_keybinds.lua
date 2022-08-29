@@ -1,5 +1,8 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- Leader key.
+vim.g['mapleader'] = ",."
+
 -- jkl; movement.
 vim.keymap.set({"n", "v"}, "j", "h")
 vim.keymap.set({"n", "v"}, "l", "j")
@@ -12,10 +15,10 @@ vim.keymap.set({"i", "n"}, "<C-l>", "<Down>")
 vim.keymap.set({"i", "n"}, "<C-;>", "<Right>")
 
 -- Switching windows using jkl; movement.
-vim.keymap.set("n", "<C-w>j", "<C-w><Left>")
-vim.keymap.set("n", "<C-w>k", "<C-w><Up>")
-vim.keymap.set("n", "<C-w>l", "<C-w><Down>")
-vim.keymap.set("n", "<C-w>;", "<C-w><Right>")
+vim.keymap.set("n", "<leader>j", "<C-w><Left>")
+vim.keymap.set("n", "<leader>k", "<C-w><Up>")
+vim.keymap.set("n", "<leader>l", "<C-w><Down>")
+vim.keymap.set("n", "<leader>;", "<C-w><Right>")
 
 -- End and home keys.
 vim.keymap.set({"n", "i", "v"}, "<A-j>", "<home>")
@@ -26,8 +29,8 @@ vim.keymap.set({"n", "i"}, "<A-k>", "<PageUp>")
 vim.keymap.set({"n", "i"}, "<A-l>", "<PageDown>")
 
 -- Nerdtree.
-vim.keymap.set("n", "<C-b>n", ":NERDTreeToggle<CR>")
-vim.keymap.set("n", "<C-b>r", ":NERDTreeRefreshRoot<CR>")
+vim.keymap.set("n", "<leader>n", ":NERDTreeToggle<CR>")
+vim.keymap.set("n", "<leader>r", ":NERDTreeRefreshRoot<CR>")
 
 -- Python scripts.
 autocmd("Filetype",
@@ -45,13 +48,13 @@ autocmd("Filetype",
 })
 
 -- Tagbar.
-vim.keymap.set({"n", "i"}, "<C-b>t", ":TagbarToggle<CR>")
+vim.keymap.set({"n", "i"}, "<leader>t", ":TagbarToggle<CR>")
 
 -- Telescope.
-vim.keymap.set({"n", "i"}, "<C-b>f", ":Telescope find_files<CR>")
-vim.keymap.set({"n", "i"}, "<C-b>g", ":Telescope live_grep<CR>")
-vim.keymap.set({"n", "i"}, "<C-b>b", ":Telescope buffers<CR>")
-vim.keymap.set({"n", "i"}, "<C-b>h", ":Telescope help_tags<CR>")
+vim.keymap.set({"n", "i"}, "<leader>f", ":Telescope find_files<CR>")
+vim.keymap.set({"n", "i"}, "<leader>g", ":Telescope live_grep<CR>")
+vim.keymap.set({"n", "i"}, "<leader>b", ":Telescope buffers<CR>")
+vim.keymap.set({"n", "i"}, "<leader>h", ":Telescope help_tags<CR>")
 
 -- Toggle terminal.
-vim.keymap.set({"n", "i"}, "<C-b>c", ":ToggleTerm<CR>")
+vim.keymap.set({"n", "i"}, "<leader>c", ":ToggleTerm<CR>")
