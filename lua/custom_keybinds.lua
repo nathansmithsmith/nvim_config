@@ -3,6 +3,9 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Leader key.
 vim.g['mapleader'] = ",."
 
+-- No more <C-w>.
+vim.keymap.set({"i", "n"}, "<leader>w", "<C-w>")
+
 -- jkl; movement.
 vim.keymap.set({"n", "v"}, "j", "h")
 vim.keymap.set({"n", "v"}, "l", "j")
