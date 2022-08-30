@@ -6,6 +6,15 @@ vim.g['mapleader'] = ",."
 -- No more <C-w>.
 vim.keymap.set({"i", "n"}, "<leader>w", "<C-w>")
 
+vim.keymap.set({"i", "v", "n", "c"}, "<A-n>", "<C-n>")
+vim.keymap.set({"i", "v", "n", "c"}, "<A-p>", "<C-p>")
+
+-- Bye bye arrows
+vim.keymap.set({"i", "n", "v"}, "<Right>", "<Nop>")
+vim.keymap.set({"i", "n", "v"}, "<Left>", "<Nop>")
+vim.keymap.set({"i", "n", "v"}, "<Up>", "<Nop>")
+vim.keymap.set({"i", "n", "v"}, "<Down>", "<Nop>")
+
 -- jkl; movement.
 vim.keymap.set({"n", "v"}, "j", "h")
 vim.keymap.set({"n", "v"}, "l", "j")
