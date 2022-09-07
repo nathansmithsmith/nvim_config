@@ -51,7 +51,7 @@ vim.g["airline#extensions#tabline#show_splits"] = 0
 vim.g["airline#extensions#tabline#show_buffers"] = 1
 
 -- Fonts.
-vim.opt.guifont = "Hack:h12"
+vim.opt.guifont = "Hack:h11"
 
 -- Vim session.
 vim.g.session_autoload = "no"
