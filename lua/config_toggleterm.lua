@@ -97,3 +97,6 @@ local cargo_test = Terminal:new { cmd = "cargo test", hidden = true }
 function _CARGO_TEST()
   cargo_test:toggle()
 end
+
+-- Some key binds.
+vim.keymap.set({"n", "i"}, "<leader>c", ":ToggleTerm<CR>")

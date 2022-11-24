@@ -40,10 +40,6 @@ vim.keymap.set({"n", "i", "v"}, "<A-;>", "<end>")
 vim.keymap.set({"n", "i"}, "<A-k>", "<PageUp>")
 vim.keymap.set({"n", "i"}, "<A-l>", "<PageDown>")
 
--- Nerdtree.
-vim.keymap.set("n", "<leader>n", ":NERDTreeToggle<CR>")
-vim.keymap.set("n", "<leader>r", ":NERDTreeRefreshRoot<CR>")
-
 -- Python scripts.
 autocmd("Filetype",
 {pattern="python", command="nnoremap <silent> <F5> :!python3 %<CR>"
@@ -61,12 +57,3 @@ autocmd("Filetype",
 
 -- Tagbar.
 vim.keymap.set({"n", "i"}, "<leader>t", ":TagbarToggle<CR>")
-
--- Telescope.
-vim.keymap.set({"n", "i"}, "<leader>f", ":Telescope find_files<CR>")
-vim.keymap.set({"n", "i"}, "<leader>g", ":Telescope live_grep<CR>")
-vim.keymap.set({"n", "i"}, "<leader>b", ":Telescope buffers<CR>")
-vim.keymap.set({"n", "i"}, "<leader>h", ":Telescope help_tags<CR>")
-
--- Toggle terminal.
-vim.keymap.set({"n", "i"}, "<leader>c", ":ToggleTerm<CR>")

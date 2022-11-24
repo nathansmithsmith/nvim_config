@@ -13,3 +13,9 @@ require('telescope').setup{
     }
   },
 }
+
+-- Some key binds.
+vim.keymap.set({"n", "i"}, "<leader>f", ":Telescope find_files<CR>")
+vim.keymap.set({"n", "i"}, "<leader>g", ":Telescope live_grep<CR>")
+vim.keymap.set({"n", "i"}, "<leader>b", ":Telescope buffers<CR>")
+vim.keymap.set({"n", "i"}, "<leader>h", ":Telescope help_tags<CR>")

@@ -24,7 +24,6 @@ Plug "davidosomething/vim-colors-meh"
 Plug "sainnhe/gruvbox-material"
 Plug "arcticicestudio/nord-vim"
 Plug "haishanh/night-owl.vim"
-Plug "vim-airline/vim-airline-themes"
 Plug "nanotech/jellybeans.vim"
 Plug "sjl/badwolf"
 Plug "tpope/vim-vividchalk"
@@ -35,9 +34,10 @@ Plug "dracula/vim"
 Plug "powerline/fonts"
 
 -- Gui.
-Plug "preservim/nerdtree"
-Plug "vim-airline/vim-airline"
-Plug "ryanoasis/vim-devicons"
+Plug "nvim-tree/nvim-web-devicons"
+Plug "nvim-tree/nvim-tree.lua"
+Plug "akinsho/bufferline.nvim"
+Plug "nvim-lualine/lualine.nvim"
 Plug "akinsho/toggleterm.nvim"
 Plug "preservim/tagbar"
 Plug "glepnir/dashboard-nvim"
@@ -51,7 +51,6 @@ Plug "nvim-telescope/telescope.nvim"
 Plug "bfrg/vim-cpp-modern"
 
 -- Session
-Plug "xolox/vim-session"
-Plug "xolox/vim-misc"
+Plug "rmagatti/auto-session"
 
 vim.call('plug#end')
