@@ -41,6 +41,8 @@ Plug "nvim-lualine/lualine.nvim"
 Plug "akinsho/toggleterm.nvim"
 Plug "preservim/tagbar"
 Plug "glepnir/dashboard-nvim"
+Plug "smiteshp/nvim-navic"
+Plug "dstein64/nvim-scrollview"
 
 -- Telescope.
 Plug "BurntSushi/ripgrep"

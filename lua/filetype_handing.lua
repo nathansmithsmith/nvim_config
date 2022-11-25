@@ -15,7 +15,7 @@ autocmd("Filetype",
 {pattern="*.txt", command="set formatoptions+=t textwidth=72 nocindent noexpandtab shiftwidth=8 tabstop=8 softtabstop=8"
 })
 
--- c and c++.
+-- C and c++.
 autocmd("Filetype",
 {pattern={"c", "cpp", "slang"},
 command="set cindent tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab"
@@ -24,6 +24,11 @@ command="set cindent tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab"
 -- Only c.
 autocmd("Filetype",
 {pattern="c", command="set formatoptions+=ro"
+})
+
+-- Assembly.
+autocmd("Filetype",
+{pattern="asm", command="set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab"
 })
 
 -- Lua.

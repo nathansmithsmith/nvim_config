@@ -118,12 +118,23 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lspconfig = require('lspconfig')
 
+-- Attaching navic.
+local navic = require("nvim-navic")
+
+local on_attach = function(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+    end
+end
+
 -- C++/C.
 lspconfig['clangd'].setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+	on_attach = on_attach
 }
 
 -- Python
 lspconfig['pyright'].setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+	on_attach = on_attach
 }
