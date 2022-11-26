@@ -1,4 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
+local constants = require("constants")
 
 -- Leader key.
 vim.g['mapleader'] = ",."
@@ -6,8 +7,9 @@ vim.g['mapleader'] = ",."
 -- No more <C-w>.
 vim.keymap.set({"i", "n"}, "<leader>w", "<C-w>")
 
-vim.keymap.set({"i", "v", "n", "c"}, "<A-n>", "<C-n>")
-vim.keymap.set({"i", "v", "n", "c"}, "<A-p>", "<C-p>")
+-- Next and previous.
+vim.keymap.set({"i", "v", "n", "c"}, constants.next_key, "<C-n>")
+vim.keymap.set({"i", "v", "n", "c"}, constants.previous_key, "<C-p>")
 
 -- Bye bye arrows
 vim.keymap.set({"i", "n", "v"}, "<Right>", "<Nop>")
@@ -54,6 +56,3 @@ autocmd("Filetype",
 autocmd("Filetype",
 {pattern="lua", command="nnoremap <silent> <F5> :!lua %<CR>"
 })
-
--- Tagbar.
-vim.keymap.set({"n", "i"}, "<leader>t", ":TagbarToggle<CR>")

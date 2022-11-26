@@ -1,4 +1,5 @@
 vim.opt.completeopt = "menu,menuone,noselect"
+local constants = require("constants")
 
 -- Setup lspconfig.
 require'lspconfig'.clangd.setup{}
@@ -35,6 +36,54 @@ local kind_icons = {
   TypeParameter = "",
 }
 
+-- The key mapping for the cmd.
+local cmd_mapping = {
+	['<Tab>'] = {
+		c = function()
+			if cmp.visible() then
+				cmp.select_next_item()
+			else
+				feedkeys.call(keymap.t('<C-z>'), 'n')
+			end
+		end
+	},
+
+	['<S-Tab>'] = {
+		c = function()
+			if cmp.visible() then
+				cmp.select_prev_item()
+			else
+				feedkeys.call(keymap.t('<C-z>'), 'n')
+			end
+		end
+	},
+
+	[constants.next_key] = {
+		c = function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			else
+				fallback()
+			end
+		end
+	},
+
+	[constants.previous_key] = {
+		c = function(fallback)
+			if cmp.visible() then
+			  cmp.select_prev_item()
+			else
+			  fallback()
+			end
+		end
+	},
+
+	[constants.close_key] = {
+		c = cmp.mapping.close(),
+	}
+}
+
+-- Setup time!!!!
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -47,13 +96,13 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = {
-    ["<A-p>"] = cmp.mapping.select_prev_item(),
-	["<A-n>"] = cmp.mapping.select_next_item(),
+	[constants.next_key] = cmp.mapping.select_next_item(),
+    [constants.previous_key] = cmp.mapping.select_prev_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<A-e>"] = cmp.mapping {
+    [constants.close_key] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
@@ -98,7 +147,7 @@ cmp.setup.filetype('gitcommit', {
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
+  mapping = cmd_mapping,
   sources = {
     { name = 'buffer' }
   }
@@ -106,7 +155,7 @@ cmp.setup.cmdline('/', {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
+  mapping = cmd_mapping,
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
