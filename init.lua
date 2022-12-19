@@ -13,6 +13,7 @@ require("config_bufferline")
 require("config_lualine")
 require("config_auto_session")
 require("config_scrollview")
+require("config_cmake")
 
 require("vim_behavior")
 require("config_options") -- Options should always go last.

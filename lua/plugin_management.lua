@@ -48,6 +48,10 @@ Plug "BurntSushi/ripgrep"
 Plug "nvim-lua/plenary.nvim"
 Plug "nvim-telescope/telescope.nvim"
 
+-- Cmake.
+Plug "mfussenegger/nvim-dap"
+Plug "Civitasv/cmake-tools.nvim"
+
 -- Other.
 Plug "bfrg/vim-cpp-modern"
 
